@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fudeo_start_stream_app/news_stream.dart';
 
 void main() {
-  final stream = NewsStream().getStream();
-  stream.forEach((data) => print(data));
-
   runApp(App());
 }
 
@@ -29,6 +26,24 @@ class HomePage extends StatelessWidget {
         title: Text("Stream"),
         centerTitle: true,
         elevation: 0,
+      ),
+      body: Center(
+        child: StreamBuilder(
+          stream: NewsStream().getStream(),
+          builder: (context, snapshot) {
+            switch (snapshot.connectionState) {
+              case ConnectionState.active:
+                return Text(
+                  snapshot.data.toString(),
+                );
+
+              default:
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+            }
+          },
+        ),
       ),
     );
   }
