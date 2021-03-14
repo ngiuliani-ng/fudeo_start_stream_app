@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fudeo_start_stream_app/news_stream.dart';
 
 void main() {
+  final stream = NewsStream().getStream();
+  stream.forEach((data) => print(data));
+
   runApp(App());
 }
 
@@ -20,6 +24,12 @@ class App extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Stream"),
+        centerTitle: true,
+        elevation: 0,
+      ),
+    );
   }
 }
