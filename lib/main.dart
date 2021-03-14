@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fudeo_start_stream_app/article.dart';
-import 'package:fudeo_start_stream_app/news_stream.dart';
+import 'package:fudeo_start_stream_app/models/article.dart';
+import 'package:fudeo_start_stream_app/providers/news_stream.dart';
 
 void main() {
   runApp(App());

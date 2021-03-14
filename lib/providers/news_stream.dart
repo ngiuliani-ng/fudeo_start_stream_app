@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
-import 'package:fudeo_start_stream_app/article.dart';
-import 'package:fudeo_start_stream_app/config.dart';
+import 'package:fudeo_start_stream_app/models/article.dart';
+import 'package:fudeo_start_stream_app/providers/config.dart';
 import 'package:http/http.dart' as http;
 
 class NewsStream {
